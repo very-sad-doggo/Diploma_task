@@ -49,6 +49,7 @@ cat <<EOF > terraform.tfvars
     vm_user_name        = "${PROJECT_NAME}"
     public_ssh_key_path = "${SSH_PUBKEY_PATH}"
     storage_account_name= "${ARM_STORAGE_ACCOUNT_NAME}"
+    pgsql_password = "vova123"
 EOF
 
 echo "terraform.tfvars:"
