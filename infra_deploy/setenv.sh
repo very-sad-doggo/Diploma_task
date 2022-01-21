@@ -3,7 +3,7 @@
 # defaults
 export PROJECT_NAME=vladimir-diploma-task 
 export ARM_LOCATION="ukwest"
-ARM_UNIQUE_STATE_NAME=tfstorageacc
+ARM_UNIQUE_STATE_NAME=ryadovoystoracc
 export SSH_PUBKEY_PATH="/home/${USER}/.ssh/id_rsa.pub"
 
 # Account IDs
