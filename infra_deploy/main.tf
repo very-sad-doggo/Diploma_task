@@ -5,7 +5,7 @@ provider "azurerm" {
   tenant_id       = "${var.tenant_id}"
 }
 
-module "res_group" {
+module "resourse_group" {
   source   = "./resource_group"
   location = "${var.location}"
 }
@@ -17,8 +17,8 @@ module "vnet" {
   res_group_name = "${module.res_group.res_group_name}"
 }
 
-module "sec_group" {
-  source         = "./base/sec_group"
+module "security_group" {
+  source         = "./base/security_group"
   location       = "${var.location}"
   res_group_name = "${module.res_group.res_group_name}"
 }
@@ -42,8 +42,8 @@ module "aks_cluster" {
   client_secret  = "${var.client_secret}"
 }
 
-module "az_psql" {
-  source                 = "./az_psql"
+module "psql" {
+  source                 = "./psql"
   location               = "${var.location}"
   res_group_name         = "${module.res_group.res_group_name}"
   pgsql_capacity         = "${var.pgsql_capacity}"
