@@ -26,3 +26,15 @@ az storage container create \
 -n tfstate \
 --account-name ryadovoystoracc \
 --account-key $ACCOUNT_KEY
+
+#Populate backend.tfvars file
+
+cat <<EOF > backend.tfvars
+    resource_group_name   = "vladimir-ryadovoy-diploma"
+    storage_account_name  = "ryadovoystoracc"
+    container_name        = "tfstate"
+    access_key            = "$ACCOUNT_KEY"
+    key                   = "terraform.tfstate"
+EOF
+echo backend.tfvars
+cat backend.tfvars
