@@ -42,7 +42,7 @@ cat <<EOF > terraform.tfvars
     resource_group_name = "${ARM_RESOURCE_GROUP_NAME}"
     aks_service_principal_app_id = "${ARM_CLIENT_ID}"
     aks_service_principal_object_id = "${ARM_SERVICE_PRINCIPAL_OBJECT_ID}"
-    aks_service_principal_client_secret = "${ARM_CLIENT_SECRET}"
+    aks_service_principal_client_secret = "Wye7Q~JKsFwuLOw11euTt4EHupLWcLIVNyjoU"
     virtual_network_name = "VNet-${PROJECT_NAME}"
     aks_subnet_name     = "subnet-${PROJECT_NAME}"
     aks_name            = "aks-cluster-${PROJECT_NAME}"
