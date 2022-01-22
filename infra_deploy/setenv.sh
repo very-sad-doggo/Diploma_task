@@ -1,16 +1,16 @@
 #!/bin/bash
-
+### DEPRICATED AT THIS POINT
 # defaults
 export PROJECT_NAME=vladimir-diploma-task 
 export ARM_LOCATION="ukwest"
 ARM_UNIQUE_STATE_NAME=ryadovoystoracc
-export SSH_PUBKEY_PATH="/home/${USER}/.ssh/id_rsa.pub"
+export SSH_PUBKEY_PATH="~/.ssh/id_rsa.pub"
 
 # Account IDs
 TENANT_ID=$(az account show --query 'homeTenantId' -o tsv)
 SUBSCRIPTION_ID=$( az account list --query "[?isDefault].id" -o tsv )
-SERVICE_PRINCIPAL_ID=$(az ad sp list --display-name $PROJECT_NAME --query '[].appId' -o tsv)
-SERVICE_PRINCIPAL_OBJECT_ID=$(az ad sp list --display-name $PROJECT_NAME --query '[].objectId' -o tsv)
+SERVICE_PRINCIPAL_ID=$(az ad sp list --display-name epm-rdsp-azure-devops --query '[].appId' -o tsv)
+SERVICE_PRINCIPAL_OBJECT_ID=$(az ad sp list --display-name epm-rdsp-azure-devops --query '[].objectId' -o tsv)
 
 # Resource Group
 export ARM_RESOURCE_GROUP_NAME="vladimir-ryadovoy-diploma"; 
@@ -40,14 +40,14 @@ cat <<EOF > terraform.tfvars
     projectname = "${PROJECT_NAME}"
     region = "${ARM_LOCATION}"
     resource_group_name = "${ARM_RESOURCE_GROUP_NAME}"
-    aks_service_principal_app_id = "${ARM_CLIENT_ID}"
+    client_id = "${ARM_CLIENT_ID}"
     aks_service_principal_object_id = "${ARM_SERVICE_PRINCIPAL_OBJECT_ID}"
     aks_service_principal_client_secret = "Wye7Q~JKsFwuLOw11euTt4EHupLWcLIVNyjoU"
     virtual_network_name = "VNet-${PROJECT_NAME}"
     aks_subnet_name     = "subnet-${PROJECT_NAME}"
     aks_name            = "aks-cluster-${PROJECT_NAME}"
     vm_user_name        = "${PROJECT_NAME}"
-    public_ssh_key_path = "${SSH_PUBKEY_PATH}"
+    ssh_public_key = "${SSH_PUBKEY_PATH}"
     storage_account_name= "${ARM_STORAGE_ACCOUNT_NAME}"
     pgsql_password = "vova123"
 EOF
