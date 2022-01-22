@@ -16,5 +16,5 @@ cat <<EOF > terraform.tfvars
     tenant_id       = "$AZ_TENANT_ID"
     pgsql_password   = "vova123"
 EOF
-echo backend.tfvars
-cat backend.tfvars
+echo terraform.tfvars
+cat terraform.tfvars
