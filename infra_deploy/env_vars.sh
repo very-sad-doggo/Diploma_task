@@ -10,9 +10,11 @@ SERVICE_PRINCIPAL_OBJECT_ID=$(az ad sp list --display-name epm-rdsp-azure-devops
 
 #prepare terraform.tfvars file
 cat <<EOF > terraform.tfvars
-    subscription_id = "$AZ_SUBSCRIPTION_ID"
-    client_id       = "$AZ_CLIENT_NAME_ID"
+    subscription_id = "$SUBSCRIPTION_ID"
+    client_id       = "$SERVICE_PRINCIPAL_ID"
     client_secret   = "Wye7Q~JKsFwuLOw11euTt4EHupLWcLIVNyjoU"
     tenant_id       = "$AZ_TENANT_ID"
     pgsql_password   = "vova123"
 EOF
+echo backend.tfvars
+cat backend.tfvars
