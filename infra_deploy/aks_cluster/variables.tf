@@ -2,7 +2,7 @@ variable "location" {
   description = "Azure location"
 }
 
-variable "resource_group_name" {
+variable "res_group_name" {
   description = "Azure resource group name"
 }
 

@@ -14,18 +14,18 @@ module "vnet" {
   source         = "./base/VNet"
   address_space  = "${var.address_space}"
   location       = "${var.location}"
-  res_group_name = "${module.res_group.res_group_name}"
+  res_group_name = "vladimir-ryadovoy-diploma"
 }
 
 module "security_group" {
   source         = "./base/security_group"
   location       = "${var.location}"
-  res_group_name = "${module.res_group.res_group_name}"
+  res_group_name = "vladimir-ryadovoy-diploma"
 }
 
 module "subnet" {
   source           = "./base/subnet"
-  res_group_name   = "${module.res_group.res_group_name}"
+  res_group_name   = "vladimir-ryadovoy-diploma"
   net_sec_group_id = "${module.sec_group.net_sec_group_id}"
   vnet_name        = "${module.vnet.vnet_name}"
   subnet_prefixes  = "${var.subnet_prefixes}"
@@ -33,7 +33,7 @@ module "subnet" {
 
 module "k8s" {
   source         = "./aks_cluster"
-  res_group_name = "${module.res_group.res_group_name}"
+  res_group_name = "vladimir-ryadovoy-diploma"
   subnet_id      = "${module.subnet.subnet_id}"
   location       = "${var.location}"
   ssh_public_key = "${var.ssh_public_key}"
@@ -45,7 +45,7 @@ module "k8s" {
 module "psql" {
   source                 = "./psql"
   location               = "${var.location}"
-  res_group_name         = "${module.res_group.res_group_name}"
+  res_group_name         = "vladimir-ryadovoy-diploma"
   pgsql_capacity         = "${var.pgsql_capacity}"
   pgsql_tier             = "${var.pgsql_tier}"
   pgsql_storage          = "${var.pgsql_storage}"
