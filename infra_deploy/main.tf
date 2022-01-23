@@ -29,7 +29,7 @@ module "subnet" {
   res_group_name   = "vladimir-ryadovoy-diploma"
   net_sec_group_id = "${module.security_group.net_sec_group_id}"
   vnet_name        = "${module.vnet.vnet_name}"
-  subnet_prefixes  = "${var.subnet_prefixes}"
+  subnet_prefixes  = ["10.20.0.0/24"]
 }
 
 module "k8s" {
