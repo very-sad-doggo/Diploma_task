@@ -5,7 +5,7 @@ provider "azurerm" {
   tenant_id       = "${var.tenant_id}"
 }
 
-module "resourse_group" {
+module "res_group" {
   source   = "./resource_group"
   location = "${var.location}"
 }
@@ -25,13 +25,13 @@ module "security_group" {
 
 module "subnet" {
   source           = "./base/subnet"
-  res_group_name   = "${module.res_group.res_group_name}"
+  res_group_name   = "${module.resource_group.res_group_name}"
   net_sec_group_id = "${module.sec_group.net_sec_group_id}"
   vnet_name        = "${module.vpc.vnet_name}"
   subnet_prefixes  = "${var.subnet_prefixes}"
 }
 
-module "aks_cluster" {
+module "k8s" {
   source         = "./aks_cluster"
   res_group_name = "${module.res_group.res_group_name}"
   subnet_id      = "${module.subnet.subnet_id}"
