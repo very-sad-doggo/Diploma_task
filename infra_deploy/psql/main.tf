@@ -17,7 +17,7 @@ resource "azurerm_postgresql_server" "az_psql" {
   #geo_redundant_backup  = "${var.pgsql_redundant_backup[terraform.workspace]}"
   
   version                      = "9.6"
-  ssl_enforcement              = "Enabled"
+  ssl_enforcement_enabled              = true
  
 	 tags = {
     Environment = "${terraform.workspace}"
