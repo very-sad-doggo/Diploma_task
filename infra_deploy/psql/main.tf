@@ -7,7 +7,7 @@ resource "azurerm_postgresql_server" "az_psql" {
   administrator_login_password = "${var.pgsql_password}"
 
   sku_name     = "B_Gen5_2"
-  capacity = "${var.pgsql_capacity[terraform.workspace]}"
+  #capacity = "${var.pgsql_capacity[terraform.workspace]}"
   #tier     = "${var.pgsql_tier[terraform.workspace]}"
   #family   = "Gen5"
 
