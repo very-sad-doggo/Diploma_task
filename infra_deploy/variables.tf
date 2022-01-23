@@ -15,7 +15,7 @@ variable "tenant_id" {
 }
 
 variable "location" {
-  default     = "southeastasia"
+  default     = "ukwest"
   description = "Azure location"
 }
 
