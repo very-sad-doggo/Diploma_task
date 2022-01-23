@@ -11,6 +11,6 @@ variable "vnet_name" {
 }
 
 variable "subnet_prefixes" {
-  type        = "map"
+  type        = map(string)
   description = "Subnet CIDR"
 }
