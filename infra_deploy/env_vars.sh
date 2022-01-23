@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Get Tennant ID
+#Get AppOwner Tennant ID
 AZ_TENANT_ID=$(az ad sp list --display-name epm-rdsp-azure-devops --query "[].appOwnerTenantId" --out tsv)
 #Get subscription ID 
 SUBSCRIPTION_ID=$( az account list --query "[?isDefault].id" -o tsv )
