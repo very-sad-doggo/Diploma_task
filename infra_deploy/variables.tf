@@ -32,8 +32,8 @@ variable "subnet_prefixes" {
   description = "CIDR for the subnet"
 
   default = {
-    prod = "10.10.0.0/24"
-    dev  = "10.20.0.0/24"
+    prod = ["10.10.0.0/24"]
+    dev  = ["10.20.0.0/24"]
   }
 }
 
