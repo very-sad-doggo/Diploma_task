@@ -25,9 +25,9 @@ module "security_group" {
 
 module "subnet" {
   source           = "./base/subnet"
-  res_group_name   = "${module.resource_group.res_group_name}"
+  res_group_name   = "${module.res_group.res_group_name}"
   net_sec_group_id = "${module.sec_group.net_sec_group_id}"
-  vnet_name        = "${module.vpc.vnet_name}"
+  vnet_name        = "${module.vnet.vnet_name}"
   subnet_prefixes  = "${var.subnet_prefixes}"
 }
 
