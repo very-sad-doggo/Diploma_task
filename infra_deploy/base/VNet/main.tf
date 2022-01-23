@@ -6,7 +6,7 @@ resource "azurerm_virtual_network" "vnet" {
   location            = "${var.location}"
   resource_group_name = "${var.res_group_name}"
 
-  tags {
+  tags = {
     environment = "${terraform.workspace}"
   }
 }

@@ -4,6 +4,12 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   resource_group_name = "${var.res_group_name}"
   dns_prefix          = "k8s-${terraform.workspace}"
 
+   default_node_pool {
+    name       = "default"
+    node_count = 1
+    vm_size    = "Standard_D2_v2"
+  }
+
   linux_profile {
     admin_username = "ubuntu"
 
@@ -30,7 +36,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     network_plugin = "azure"
   }
 
-  tags {
+  tags = {
     Environment = "${terraform.workspace}"
   }
 }

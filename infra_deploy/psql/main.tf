@@ -21,7 +21,7 @@ resource "azurerm_postgresql_server" "az_psql" {
   version                      = "9.6"
   ssl_enforcement              = "Enabled"
  
-	 tags {
+	 tags = {
     Environment = "${terraform.workspace}"
   }
 }

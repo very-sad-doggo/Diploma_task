@@ -3,7 +3,7 @@ resource azurerm_network_security_group "net_sec_group" {
   location            = "${var.location}"
   resource_group_name = "${var.res_group_name}"
 
-  tags {
+  tags = {
     environment = "${terraform.workspace}"
   }
 }
