@@ -27,7 +27,6 @@ module "vnet" {
 module "subnet" {
   source           = "./base/subnet"
   res_group_name   = "vladimir-ryadovoy-diploma"
-  #net_sec_group_id = "${module.security_group.net_sec_group_id}"
   vnet_name        = "${module.vnet.vnet_name}"
   subnet_prefixes  = "${var.subnet_prefixes}"
 }
