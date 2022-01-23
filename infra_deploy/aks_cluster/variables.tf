@@ -7,12 +7,12 @@ variable "resource_group_name" {
 }
 
 variable "ssh_public_key" {
-  #	type = "map"
+  #	type = map(string)
   description = "Azure ssh key_data"
 }
 
 variable "agent_count" {
-  type        = "map"
+  type        = map(string)
   description = "Azure agent_count"
 }
 
