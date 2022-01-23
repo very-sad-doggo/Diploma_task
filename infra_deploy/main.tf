@@ -18,11 +18,11 @@ module "vnet" {
   res_group_name = "vladimir-ryadovoy-diploma"
 }
 
-module "security_group" {
-  source         = "./base/security_group"
-  location       = "${var.location}"
-  res_group_name = "vladimir-ryadovoy-diploma"
-}
+#module "security_group" {
+#  source         = "./base/security_group"
+#  location       = "${var.location}"
+#  res_group_name = "vladimir-ryadovoy-diploma"
+#}
 
 module "subnet" {
   source           = "./base/subnet"
