@@ -1,0 +1,3 @@
+setenv.sh
+./infra_deploy/base/security_group/*
+./infra_deploy/.DS_store
