@@ -1,6 +1,6 @@
 variable "address_space" {
   type        = map(string)
-  description = "CIDR for the whole VPC"
+  description = "CIDR for the whole VNet"
 }
 
 variable "location" {
