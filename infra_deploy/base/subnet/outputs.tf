@@ -3,5 +3,5 @@ output "subnet_id" {
 }
 
 output "subnet_address_prefix" {
-  value = "${azurerm_subnet.subnet.address_prefix}"
+  value = "${azurerm_subnet.subnet.address_prefixes}"
 }
